@@ -9,4 +9,4 @@ DMV is a FiveM compatible resource which creates a command that any player can u
  5. In-game, press T and type "/dmv" this will delete your car and you are finished
 ## Extra
 If you want something better than the message that is sent to the chat, you can get [my notification resource](https://github.com/JimboDaDuck/FiveM-ESX-Notifications)
-Then you can download DMV for ESX
+Then you can download DMV for ESX (remember to change the server config to "start dmv_esx")
