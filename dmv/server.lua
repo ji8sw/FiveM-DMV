@@ -1,9 +1,7 @@
-RegisterCommand('dmv', function(source, args, rawCommand)
-    -- Get the player's server ID
-    local playerId = tonumber(source)
+RegisterCommand('dmv', function(PID, args, rawCommand)
 
     -- Get the player's ped
-    local playerPed = GetPlayerPed(playerId)
+    local playerPed = GetPlayerPed(tonumber(PID))
 
     -- Get the player's vehicle
     local vehicle = GetVehiclePedIsIn(playerPed, false)
@@ -12,8 +10,8 @@ RegisterCommand('dmv', function(source, args, rawCommand)
     if DoesEntityExist(vehicle) then
         -- Delete the vehicle
         DeleteEntity(vehicle)
-        TriggerClientEvent('chat:addMessage', playerId, { args = { '^1Success:', 'Your vehicle has been deleted.' } })
+        TriggerClientEvent('chat:addMessage', PID, { args = { '^1Success:', 'Your vehicle has been deleted.' } })
     else
-        TriggerClientEvent('chat:addMessage', playerId, { args = { '^1Error:', 'You are not in a vehicle.' } })
+        TriggerClientEvent('chat:addMessage', PID, { args = { '^1Error:', 'You are not in a vehicle.' } })
     end
 end, false)
